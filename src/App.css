@@ -1,38 +1,977 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  --size: calc(1vh + 1vw);
+  --gold: #ffb338;
+  --whiteGold: #ffffff;
+  --light-shadow: #77571d;
+  --deepNavy: #247e57;
+  --lightNavy: #5FA214;
+  --lime: #3d795a;
+  --navy: #5c756a;
+  --darkNavy: #5b6e7d;
+  --darkGreen: #2E5543;
+  --white: #f7f7f7;
+  --deepRed: #DC0000;
+  --text: #2B3044;
+  --line: #BBC1E1;
+  --primaryD: #DD5353;
+  --line-active: #5c756a;
+  --deepGrey: #5a6b76;
+  --lightGrey: #9bb6aa;
+  --fogyWhite: #FAF4F4;
+  --juicyOrange: #b68536;
+  --burgundy: #551B54;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+body {
+  width: 100%;
+  height: 100%;
   min-height: 100vh;
+  background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+}
+
+.HeaderMain {
+  background-color: var(--deepGrey);
+  background-image:
+  repeating-linear-gradient(120deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
+  repeating-linear-gradient(60deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
+  linear-gradient(60deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1)),
+  linear-gradient(120deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1));
+  background-size: 70px 120px;
+}
+
+.thankCat {
+  width: 70px;
+  margin-right: -20px;
+}
+
+.thankChef {
+  width: 80px;
+}
+
+.Door {
+  width: 70px;
+}
+
+.ThankText {
+  text-shadow: 0px 2px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
+}
+
+.ThankText::first-letter {
+  font-size: 1.2em;
+  padding: 5px 10px;
+  margin-right: 5px; 
+  background: var(--lightNavy);
+  color: var(--fogyWhite);
+  border-radius: 50% 0;
+  font-weight: bold;
+  text-shadow: 0px 4px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.CartHeader,
+.CartFooter,
+.ThankHeader,
+.ThankFooter {
+  background-color: rgb(133 111 90);
+  background-image:
+  repeating-linear-gradient(120deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
+  repeating-linear-gradient(60deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
+  linear-gradient(60deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1)),
+  linear-gradient(120deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1));
+  background-size: 70px 120px;
+}
+
+.CartHeader h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-style: italic;
+}
+
+.bi-x-circle {
+  transition: all .2s ease-in-out;
+}
+
+.bi-x-circle:hover {
+  transform: rotate(-90deg);
+}
+
+.CartBody,
+.checkoutBackground,
+.ThankBody {
+  background: url("./Assets/crumpledPaper.jpg");
+  background-position: center;
+  background-repeat: repeat;
+}
+
+.CartItemsText {
+  color: var(--darkGreen);
+  text-shadow: 0px 2px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
+}
+
+.CartItemsText::first-letter {
+  font-size: 1.2em;
+  padding: 5px 10px;
+  margin-right: 5px; 
+  background: var(--lightNavy);
+  color: var(--fogyWhite);
+  border-radius: 50% 0;
+  font-weight: bold;
+  text-shadow: 0px 4px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.bi-x-circle {
+  text-shadow: 0px 2px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
+}
+
+.bi-trash3 {
+  display: inline-block;
+  color: var(--juicyOrange);
+  font-size: clamp(20px, calc(var(--size)*1.2), 34px);
+  text-shadow: 0px 1px 2px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
+  transition: all .2s ease-in-out;
+}
+
+.bi-trash3:hover {
+  color: var(--deepRed);
+  transform: translateY(-5px);
+  scale: 1.1;
+}
+
+.totalValue,
+.CartItemsTitle,
+.CheckoutBtn,
+.HomeBtn {
+  text-shadow: 0px 4px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
+}
+.CheckoutBtn,
+.HomeBtn {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.CheckoutFormMain {
+  background: rgba(184, 115, 51, 0.8);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.checkoutFormTitle {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+}
+
+.checkoutCatBG {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  padding: 10px 25px;
+  background-color: rgb(133 111 90);
+  background-image:
+  repeating-linear-gradient(120deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
+  repeating-linear-gradient(60deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
+  linear-gradient(60deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1)),
+  linear-gradient(120deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1));
+  background-size: 70px 120px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.App-link {
-  color: #61dafb;
+.checkoutCat {
+  filter: drop-shadow(4px 4px 8px #c2b2b2);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
+.billingAddress,
+.payment {
+  text-shadow: 0px 4px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
+}
+
+#firstName,
+#email,
+#address,
+#country,
+#state,
+#zip,
+#cc-name,
+#cc-number,
+#cc-expiration,
+#cc-cvv {
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(14px, calc(var(--size)*1.2), 20px);
+  font-weight: 200;
+  color: var(--white);
+}
+
+#firstName::placeholder,
+#lastName::placeholder,
+#email::placeholder,
+#address::placeholder,
+#address2::placeholder,
+#cc-name::placeholder,
+#cc-number::placeholder,
+#cc-expiration::placeholder,
+#cc-cvv::placeholder,
+#zip::placeholder {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(14px, calc(var(--size)*1.2), 20px);
+  font-weight: 200;
+  color: var(--white);
+  text-shadow: 0px 4px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
+}
+
+#firstName:focus::placeholder,
+#lastName:focus::placeholder,
+#email:focus::placeholder,
+#address:focus::placeholder,
+#address2:focus::placeholder,
+#cc-name:focus::placeholder,
+#cc-number:focus::placeholder,
+#cc-expiration:focus::placeholder,
+#cc-cvv:focus::placeholder,
+#zip:focus::placeholder {
+  transform: translateY(-12px) translateX(15px);
+  color: transparent;
+  transition: all .3s ease-in-out;
+  text-shadow: none;
+}
+
+.checkbox {
+  display: inline-flex;
+  cursor: pointer;
+  position: relative;
+}
+
+.checkbox > span {
+  font-family: 'Poppins', sans-serif;
+  color: var(--white);
+  font-weight: 200;
+  padding: 0.5rem 0.25rem;
+  font-size: clamp(14px, calc(var(--size)*1.2), 18px);
+}
+
+.checkbox > input {
+  height: 25px;
+  width: 25px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  border: 1px solid #34495E;
+  border-radius: 4px;
+  outline: none;
+  transition-duration: 0.3s;
+  background-color: #F8C4B4;
+  cursor: pointer;
+}
+
+.checkbox > input:checked {
+  border: 1px solid #41B883;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.checkbox > input:checked + span::before {
+  content: '\2713';
+  display: block;
+  text-align: center;
+  font-size: 25px;
+  color: var(--white);
+  position: absolute;
+  left: 0.4rem;
+  top: -0.5rem;
+}
+
+.checkbox > input:active {
+  border: 2px solid #34495E;
+}
+
+.dividerLine {
+  color: var(--white);
+}
+
+.btn-radio {
+  cursor: pointer;
+  display: inline-block;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.btn-radio:not(:first-child) {
+  margin-left: 20px;
+}
+
+.btn-radio svg {
+  fill: none;
+  vertical-align: middle;
+}
+
+.btn-radio svg circle {
+  stroke-width: 2;
+  stroke: #C8CCD4;
+}
+
+.btn-radio svg path {
+  stroke: rgba(0, 0, 0, 0.6);
+}
+
+.btn-radio svg path.inner {
+  stroke-width: 6;
+  stroke-dasharray: 19;
+  stroke-dashoffset: 19;
+}
+
+.btn-radio svg path.outer {
+  stroke-width: 2;
+  stroke-dasharray: 57;
+  stroke-dashoffset: 57;
+}
+
+.btn-radio input {
+  display: none;
+}
+
+.btn-radio input:checked + svg path {
+  transition: all 0.4s ease;
+}
+
+.btn-radio input:checked + svg path.inner {
+  stroke-dashoffset: 38;
+  transition-delay: 0.3s;
+}
+
+.btn-radio input:checked + svg path.outer {
+  stroke-dashoffset: 0;
+}
+
+.btn-radio span {
+  font-family: 'Poppins', sans-serif;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: clamp(14px, calc(var(--size)*1.2), 20px);
+  font-weight: 400;
+  color: var(--white);
+}
+
+#formBtn {
+  border-radius: 0;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--white);
+  outline-offset: -5px;
+  outline: 1px solid var(--white);
+  text-align: center;
+  font-family: 'Cinzel', serif;
+  font-size: 22px;
+  font-weight: 600;
+  font-size: clamp(22px, calc(var(--size)*1.7), 34px);
+  color: var(--white);
+  transition: all .3s ease-in-out;
+  transform: rotate(-3deg);
+  text-shadow: 0px 4px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
+}
+
+#formBtn:hover {
+  background: rgba(31, 151, 18, 0.6);
+  color: #000000;
+  outline-offset: 5px;
+  outline: 1px solid var(--white);
+  transform: translateY(-5px);
+  scale: 1.03;
+  box-shadow: 0 0 5px var(--primaryC),
+  0 0 2px var(--primaryD),
+  0 0 6px var(--primaryD),
+  0 0 9px var(--primaryD);
+}
+
+#cartTitle {
+  background: rgba(184, 115, 51, 0.9);
+  border: 1px solid var(--white);
+  outline-offset: -5px;
+  outline: 1px solid var(--white);
+  text-shadow: 0px 4px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+#cartTitleText {
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  text-shadow: 0px 4px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
+}
+
+#cartList {
+  background: rgba(184, 115, 51, 0.6);
+  padding: 20px;
+  border-radius: 0;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+#cartList li {
+  padding: 12px;
+  border-radius: 0;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--white);
+}
+
+.itemName,
+#itemPrice {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(14px, calc(var(--size)*1.2), 20px);
+  font-weight: 200;
+  color: var(--white);
+  text-shadow: 0px 4px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
+}
+
+.bi-heart-fill {
+  background: var(--deepRed);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0px 4px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
+}
+
+.checkoutHomeBtn {
+  text-shadow: 0px 4px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
+  box-shadow: rgb(50 50 93 / 25%) 0px 50px 100px -20px, rgb(0 0 0 / 30%) 0px 30px 60px -30px, rgb(10 37 64 / 35%) 0px -2px 6px 0px inset;
+}
+
+/* ---Header-Text-Frame--- */
+.HeaderBanner {
+  background: url("./Assets/chalkBoard3.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* ----------------------- */
+
+.headerText {
+  font-family: 'Marck Script', cursive;
+  font-size: clamp(28px, calc(var(--size) * 1.7), 44px);
+  color: var(--white);
+  text-shadow: 0px 4px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
+}
+
+.headerText:first-letter {
+  font-size: 1.2em;
+  padding: 5px 10px;
+  margin-right: 5px; 
+  background: #5FA214;
+  color: var(--fogyWhite);
+  border-radius: 50% 0;
+  font-weight: bold;
+  text-shadow: 0px 4px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.headerTitle {
+  font-style: italic;
+  text-shadow: 0px 4px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
+}
+
+.FlagGreen {
+  display: inline-block;
+  color: greenyellow;
+}
+.FlagWhite {
+  display: inline-block;
+  color: var(--white);
+}
+
+.FlagRed {
+  display: inline-block;
+  color: #DC0000;
+}
+
+.LogoRestaurant {
+  width: 150px;
+  filter: drop-shadow(4px 4px 8px #999999);
+}
+
+.ChefCatTotalMain {
+  background: url("./Assets/chalkBoard3.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.chefCatTotalBoard {
+  padding: 0px 22px;
+}
+
+.HeaderCartIconBox {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  outline: none;
+  border: none;
+}
+
+.HeaderCartIconBox:hover .CartTotalField {
+  color: var(--white);
+}
+
+.CartTotalField {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 85px;
+  height: 85px;
+  border-radius: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-size: clamp(22px, calc(var(--size) * 1.2), 32px);
+  font-weight: bold;
+  color: var(--deepNavy);
+  background: var(--deepRed);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  transition: all .2s ease-in-out;
+}
+
+.CartTotalFieldNumber {
+  display: inline-block;
+  text-shadow: 0px 2px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
+  font-size: clamp(18px, calc(var(--size) * 1.2), 26px);
+}
+
+.CartIcon {
+  width: 100px;
+  margin-right: -28px;
+  filter: drop-shadow(2px 2px 4px #999999);
+}
+
+.ChefIcon {
+  width: 180px;
+}
+
+.headerChalkTotalAmount {
+  font-family: 'Marck Script', cursive;
+  font-size: clamp(28px, calc(var(--size) * 1.2), 48px);
+  text-shadow: 0px 4px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
+}
+
+/* ---Circle-text-style---> */
+@keyframes rotate {
   to {
-    transform: rotate(360deg);
+      transform: rotate(360deg);
+  }
+}
+
+.CircleText {
+  position: absolute;
+  top: -6%;
+  left: -3.7%;
+  width: 105px;
+  height: 105px;
+  animation: rotate linear 20s infinite;
+}
+
+.CircleText text {
+  font-size: 30px;
+  fill: var(--white);
+}
+
+.amount {
+  display: inline-block;
+}
+
+.separator {
+  height: 4px;
+  background-image: repeating-linear-gradient( 5deg, var(--gold) 0% , var(--light-shadow) 23%, var(--gold) 31%);
+}
+/* -----------------------< */
+
+.MenuTitle {
+  font-family: 'Montserrat', sans-serif;
+  font-style: italic;
+  font-weight: 800;
+  font-size: clamp(42px, calc(var(--size)*2.7), 94px);
+  line-height: 1;
+  color: #6d561b;
+  text-align: center;
+  -webkit-text-stroke: 2px #6d561b;
+  -webkit-text-stroke: 2px #6d561b;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  text-shadow: 0px 4px 3px rgb(70 100 100 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
+}
+
+.MenuTitle::first-letter {
+  font-size: 1.2em;
+  padding: 5px 10px;
+  margin-right: 5px; 
+  background: var(--lightNavy);
+  border-radius: 50% 0;
+  font-weight: bold;
+  text-shadow: 0px 4px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+/* ---CARD-STYLE---> */
+.CardBody {
+  border-radius: 0;
+  border: none;
+  background: url("./Assets/crumpledPaper.jpg");
+  
+}
+
+.caption-shadow {
+  width: 100%;
+  position: relative;
+  border: 3px solid var(--darkNavy);
+  border-image: repeating-linear-gradient( 5deg, var(--gold) 0% , var(--light-shadow) 23%, var(--gold) 31%) 30 stretch;
+  
+}
+
+.caption-shadow img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.caption-shadow:hover .ItemImage {
+  transform: translateY(-100px);
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.caption-shadow figcaption {
+  font-family: 'Poppins', sans-serif;
+  width: 100%;
+  padding: 20px;
+  color: var(--white);
+  text-align: center;
+  text-transform: uppercase;
+  font-size: clamp(22px, calc(var(--size)*1.2), 30px);
+  font-weight: 500;
+  background: var(--darkNavy);
+  border-top-left-radius: 35px;
+  border-top-right-radius: 35px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  box-shadow: 0 -10px 20px -5px hsla(0, 0%, 0%, .4);
+  text-shadow: 0px 2px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
+}
+
+.changeQuantityBtn {
+  font-size: clamp(15px, calc(var(--size)*1.2), 26px);
+  font-weight: 500;
+  color: var(--darkGreen);
+  text-shadow: 0px 2px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
+}
+
+.addToCartBtn {
+  font-family: 'Poppins', sans-serif;
+  border: none;
+  border-radius: 0;
+  border-top: 1px solid var(--lightGrey);
+  background: var(--darkGreen);
+  color: var(--white);
+  font-size: clamp(18px, calc(var(--size)*1.8), 26px);
+  font-weight: 200;
+  text-shadow: 0px 2px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
+}
+
+.addToCartBtn:hover {
+  background: var(--lime);
+  color: var(--white);
+}
+
+.addToCartBtn:focus {
+  border: none;
+  outline: none;
+}
+
+.addToCartBtn:active {
+  background: var(--lime);
+}
+
+.price {
+  width: 25%;
+  float: right;
+  color: var(--navy);
+  font-size: 3.5em;
+  position: relative;
+  text-shadow: 0px 2px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
+}
+
+.bi-currency-dollar {
+  font-size: 0.75em;
+}
+
+.navMenu {
+  list-style: none;
+}
+
+.TopMenu {
+  background: url("./Assets/chalkBoardBG.jpg");
+}
+
+.MenuFrame {
+	margin:	3em auto;
+  padding: 0 50px;
+	}
+  
+
+.outerBevel { /* of frame */
+	box-shadow:	4px 6px 12px 0 black;
+	border-width:	5px;
+	border-style:	solid;
+	border-color:	rgb(109, 84, 58) rgb(24, 19, 13) rgb(24, 19, 13) rgb(109, 84, 58);
+	}
+
+.flatSurface { /* of frame */
+	border:	12px solid rgb(65, 40, 16);
+	}
+
+.innerBevel { /* of frame */
+	border-width:	5px;
+	border-style:	solid;
+	border-color:	rgb(24, 19, 13)	rgb(109, 84, 58) rgb(109, 84, 58) rgb(24, 19, 13);
+	}
+
+/* ---------- */
+.TotalInCartBox {
+  border-left: 1px solid #666;
+}
+
+.TotalTextOnCard {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(14px, calc(var(--size)*1.2), 24px);
+  font-weight: 300;
+  color: var(--darkGreen);
+  text-shadow: 0px 2px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
+}
+
+.bi-cart-plus {
+  display: inline-block;
+}
+
+.CartBtn {
+  padding: 5px;
+  border: none;
+  background: transparent;
+  outline: 1px solid var(--darkGreen);
+  color: var(--darkGreen);
+  transition: all .2s ease-in-out;
+}
+
+.CartBtn:hover {
+  background: var(--darkGreen);
+  color: var(--white);
+}
+
+.card-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(12px, calc(var(--size) * 1.2), 20px);
+  font-weight: 300;
+  color: var(--darkGreen);
+  text-shadow: 0px 2px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
+}
+
+.whiteSpace {
+  display: inline-block;
+  width: 10px;
+}
+
+.SeeMoreBtn {
+  border: none;
+  background: transparent;
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(12px, calc(var(--size) * 1.2), 16px);
+  font-weight: 400;
+  color: var(--darkGreen);
+  text-shadow: 0px 2px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
+}
+
+/* -----------See-More-SVG----------- */
+.SeeMoreBtn {
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  margin: 0 var(--spacing, 0px);
+  transition: margin 0.25s;
+}
+
+.SeeMoreBtn svg {
+  width: 76px;
+  height: 28px;
+  position: absolute;
+  left: 50%;
+  bottom: 20%;
+  transform: translate(-50%, 7px) translateZ(0);
+  fill: none;
+  stroke: var(--stroke, var(--line));
+  stroke-linecap: round;
+  stroke-width: 2px;
+  stroke-dasharray: var(--offset, 69px) 278px;
+  stroke-dashoffset: 361px;
+  transition: stroke 0.25s ease var(--stroke-delay, 0s), stroke-dasharray 0.35s;
+}
+
+.SeeMoreBtn:hover {
+  --spacing: 4px;
+  --stroke: var(--line-active);
+  --stroke-delay: .1s;
+  --offset: 180px;
+}
+/* --------------------------------------------- */
+
+.card-text::first-letter {
+  font-size: 1.2em;
+  padding: 5px 10px;
+  margin-right: 5px; 
+  background: var(--lightNavy);
+  color: var(--fogyWhite);
+  border-radius: 50% 0;
+  font-weight: bold;
+  text-shadow: 0px 4px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.bi-cart4,
+.TotalOnCard {
+  font-size: clamp(20px, calc(var(--size)*1.8), 28px);
+  text-shadow: 0px 2px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
+}
+/* ------------ */
+
+/* ---Category-BTN--- */
+.CategoryText {
+  color: var(--white);
+}
+
+.categoryButton {
+  cursor: pointer;
+  font-style: italic;
+  opacity: .5;
+  transition: all .2s ease-in-out;
+}
+
+.categoryButton:hover {
+  opacity: 1;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+.categoryButtonSelected {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  opacity: 1;
+}
+/* ------------------ */
+
+/* ---Scroll-To-Top---> */
+.top-to-btm{
+  position: relative;
+}
+
+.icon-position{
+  position: fixed;
+  bottom: 40px;
+  right: 25px;
+  z-index: 20;
+}
+
+.icon-style{
+  background-color: var(--burgundy);
+  border: 2px solid var(--white);
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  color: var(--white);
+  cursor: pointer;
+  animation: movebtn 3s ease-in-out infinite;
+  transition: all .5s ease-in-out;
+}
+
+.icon-style:hover{
+  animation: none;
+  background: var(--white);
+  color: var(--burgundy);
+  border: 2px solid var(--burgundy);
+}
+
+@keyframes movebtn {
+  0%{
+    transform: translateY(0px);
+  }
+  25%{
+    transform: translateY(20px);
+  }
+  50%{
+    transform: translateY(0px);
+  }
+  75%{
+    transform: translateY(-20px);
+  }
+  100%{
+    transform: translateY(0px);
+  }
+}
+
+.myLogo {
+  width: 70px;
+}
+/* -------------------< */
+
+@media all and (max-width: 500px) {
+  .price {
+    font-size: 2.5em;
+  }
+  .CartIcon {
+  width: 60px;
+  margin-right: -20px;
+  }
+  .ChefIcon {
+    width: 120px;
+  }
+  .CartTotalField {
+    width: 60px;
+    height: 60px;
+  }
+  .caption-shadow figcaption {
+    padding: 10px;
+    /* font-size: clamp(15px, calc(var(--size)*1.2), 28px); */
+  }
+  .MenuFrame {
+    margin:	1em auto;
+    padding: 20px 10px;
+  }
+  .CircleText {
+    position: absolute;
+    top: -8%;
+    left: -5.7%;
+    width: 80px;
+    height: 80px;
+    animation: rotate linear 20s infinite;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .btn-radio {
+      display: block;
+      float: none;
+  }
+  .btn-radio:not(:first-child) {
+      margin-left: 0;
+      margin-top: 15px;
+  }
+}
+
+@media all and (max-width: 360px) {
+  .price {
+    font-size: 1.7em;
+  }
+  .caption-shadow figcaption {
+    padding: 10px;
+    font-size: clamp(15px, calc(var(--size)*1.2), 28px);
   }
 }
