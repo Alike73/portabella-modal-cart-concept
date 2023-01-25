@@ -38,9 +38,7 @@ const CartItem = ({cartItem}) => {
                                 <div className="col-sm-8 d-flex flex-column justify-content-evenly">
                                     <div className="itemValue">
                                         <p className="fs-3 CartItemsText">
-                                            Quantity: 
-                                            {cartItem.quantity} 
-                                            portion(s)
+                                            Quantity: {cartItem.quantity}portion(s)
                                         </p>
                                         <p className="fs-3 CartItemsText">
                                             Price: <i className="bi bi-currency-dollar fs-5"></i>
