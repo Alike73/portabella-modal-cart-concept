@@ -27,7 +27,7 @@ const ThankUser = () => {
                         <img className="thankCat" src={basket} alt="catLogo" />
                         <img className="thankChef" src={chefLogo} alt="chefLogo" />
                         <img className="Door" src={door} alt="DoorImage" />
-                        <h1 className="modal-title fs-1 mx-auto text-light ps-3 ThankText" id="exampleModalLabel">
+                        <h1 className="modal-title fs-3 mx-auto text-light ps-3 ThankText" id="exampleModalLabel">
                             Thank you!
                         </h1>
                         <i className="bi bi-x-circle btn ms-auto fs-2 text-light" data-bs-dismiss="modal"></i>

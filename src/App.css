@@ -634,7 +634,11 @@ body {
   max-width: 100%;
   height: auto;
   display: block;
+  transition: all .2s ease-in-out;
 }
+
+
+
 
 .caption-shadow:hover .ItemImage {
   transform: translateY(-100px);
@@ -924,7 +928,7 @@ body {
 
 @media all and (max-width: 500px) {
   .price {
-    font-size: 2.5em;
+    font-size: 2em;
   }
   .CartIcon {
   width: 60px;
