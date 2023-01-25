@@ -9,6 +9,7 @@ import Checkout from './Components/Checkout/Checkout';
 import ThankUser from './Components/Checkout/ThankUser';
 import Dishes from './Components/DishesComponents/Dishes';
 import AllCategories from './Components/Filter/AllCategories';
+import Footer from './Components/Footer/Footer';
 import ScrollToTop from './Components/ScrollToTop/ScrollToTop';
 
 function App() {
@@ -83,7 +84,7 @@ function App() {
       <div className="separator w-100"></div>
       <h2 className='text-center my-5 MenuTitle'>MAKE YOUR CHOICE</h2>
       <Dishes />
-      
+      <Footer />
     </div>
   );
 }

@@ -35,7 +35,8 @@ body {
   background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
 }
 
-.HeaderMain {
+.HeaderMain,
+.MainFooter {
   background-color: var(--deepGrey);
   background-image:
   repeating-linear-gradient(120deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
