@@ -24,7 +24,7 @@ const CartItem = ({cartItem}) => {
                         <div className="col">
                             <div className="row">
                                 <div className="col-sm-4">
-                                    <h3 className="fs-3 text-center CartItemsText">{dishes.name}</h3>
+                                    <h3 className="fs-3 text-center CartItemsText mb-3">{dishes.name}</h3>
                                     <figure className="dishImgModal">
                                         <div className="outerBevel">
                                             <div className="flatSurface">
@@ -38,18 +38,16 @@ const CartItem = ({cartItem}) => {
                                 <div className="col-sm-8 d-flex flex-column justify-content-evenly">
                                     <div className="itemValue">
                                         <p className="fs-3 CartItemsText">
-                                            Quantity: 
-                                            {cartItem.quantity} 
-                                            portion(s)
+                                            Quantity: <span className="fw-bold">{cartItem.quantity}</span> portion(s)
                                         </p>
                                         <p className="fs-3 CartItemsText">
                                             Price: <i className="bi bi-currency-dollar fs-5"></i>
-                                            {dishes.price * cartItem.quantity}
+                                            <span className="fw-bold">{dishes.price * cartItem.quantity}</span>
                                         </p>
                                     </div>
                                     <div className="trashBox w-100 d-flex justify-content-center mb-3">
                                         <span className="trashBox" onClick={() => dispatch(removeItemFromCart({cartItemId: cartItem.id}))}>
-                                            <i className="bi bi-trash3"></i>
+                                            <i className="bi bi-trash3 CartItemsText"></i>
                                         </span>
                                     </div>
                                 </div>

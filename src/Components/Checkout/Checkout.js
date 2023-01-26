@@ -2,11 +2,13 @@
 import logoRestaurant from "../../Assets/logo1.png";
 import catInCart from "../../Assets/Cart-icon.png";
 import myLogo from "../../Assets/My-new-Logo.png";
+import standing from "../../Assets/Standing.png";
 import { getCartItems } from "../../redux/cartSlice";
 import CheckoutItems from "./CheckoutItems";
 import { useSelector } from "react-redux";
 import { getTotalPrice } from "../../redux/cartSlice";
 import { useState } from "react";
+import { FaShoppingCart } from "react-icons/fa";
 
 
 const Checkout = ({thankChefAndCat}) => {
@@ -28,7 +30,7 @@ const Checkout = ({thankChefAndCat}) => {
                             <span className='FlagGreen flag'>IT</span><span className='FlagWhite flag'>ALI</span><span className='FlagRed flag'>AN</span>
                             <img className='LogoRestaurant ms-2' src={logoRestaurant} alt="LogoRestaurant" />
                         </h2>
-                        <i className="bi bi-x-circle btn ms-auto fs-2 text-light" data-bs-dismiss="modal"></i>
+                        <i className="bi bi-x-circle ms-auto fs-2 text-light" data-bs-dismiss="modal"></i>
                     </div>
                     <div className="modal-body checkoutBackground">
                     <div className="container">
@@ -39,8 +41,8 @@ const Checkout = ({thankChefAndCat}) => {
                                 <div className="outerBevel">
                                     <div className="flatSurface">
                                         <div className="innerBevel checkoutCatBG">
-                                            <i className="bi bi-check-circle fs-2 text-light"></i>
                                             <img className="d-block checkoutCat" src={catInCart} alt="" width="72" />
+                                            <img className="characterTwo" src={standing} alt="character" />
                                         </div>
                                     </div>
                                 </div>
@@ -51,8 +53,8 @@ const Checkout = ({thankChefAndCat}) => {
                             {/* ----------------------------------------CART-ITEMS-------------------------------- */}
                             <div className="row g-5">
                             <div className="col-md-5 col-lg-4 order-md-last">
-                                <h4 id="cartTitle" className="d-flex justify-content-between align-items-center mb-3 py-3 px-5">
-                                    <span className="text-light fs-4" id="cartTitleText">Cart<i className="bi bi-caret-right"></i></span>
+                                <h4 data-bs-toggle="modal" data-bs-target="#exampleModal" id="cartTitle" className="d-flex justify-content-between align-items-center mb-3 py-3 px-5">
+                                    <span className="text-light fs-4" id="cartTitleText">Cart <FaShoppingCart /> <i className="bi bi-caret-right"></i></span>
                                     <span className="badge bg-success rounded-pill px-3 py-3" id="cartQuantity">Total: ${totalPrice}</span>
                                 </h4>
                                 {cartItems.map((cartItem, index) => <CheckoutItems cartItem = {cartItem} key = {index} />)}

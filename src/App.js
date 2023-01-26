@@ -11,11 +11,14 @@ import Dishes from './Components/DishesComponents/Dishes';
 import AllCategories from './Components/Filter/AllCategories';
 import Footer from './Components/Footer/Footer';
 import ScrollToTop from './Components/ScrollToTop/ScrollToTop';
+import SendMessage from './Components/SendMessage/SendMessage';
+
 
 function App() {
   return (
     <div>
     <ThankUser />
+    <SendMessage />
     <ScrollToTop />
     <Cart />
     <Checkout />

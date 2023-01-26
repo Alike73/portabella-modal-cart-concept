@@ -4,6 +4,13 @@
   box-sizing: border-box;
 }
 
+body {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+}
+
 :root {
   --size: calc(1vh + 1vw);
   --gold: #ffb338;
@@ -28,11 +35,119 @@
   --burgundy: #551B54;
 }
 
-body {
-  width: 100%;
-  height: 100%;
-  min-height: 100vh;
-  background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+/* ===============ScrollBar============> */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+  background: #2B4865;
+  
+}
+
+::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(to top, #c79081 0%, #dfa579 100%);
+  box-shadow: inset 2px 2px 5px 0 rgba(#fff, 0.5);
+  border-radius: 100px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%); 
+}
+
+/* ====================================== */
+
+/* ------------Send us a message-Btn-style---- */
+.sendMessage{
+  position: relative;
+}
+.messageBox-position{
+  position: fixed;
+  top: 40px;
+  right: 25px;
+  z-index: 20;
+}
+.messageBox-style{
+  background-color: #551B54;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  padding: 7px;
+  color: #fff;
+  cursor: pointer;
+  animation: movebtn 3s ease-in-out infinite;
+  transition: all .5s ease-in-out;
+}
+.messageBox-style:hover{
+  animation: none;
+  background: #fff;
+  color: #551B54;
+  border: 2px solid #551B54;
+}
+@keyframes movebtn {
+  0%{
+    transform: translateY(0px);
+  }
+  25%{
+    transform: translateY(20px);
+  }
+  50%{
+    transform: translateY(0px);
+  }
+  75%{
+    transform: translateY(-20px);
+  }
+  100%{
+    transform: translateY(0px);
+  }
+}
+/* -----------------Modal-Window-Style-------------------------- */
+
+.SendMessageText,
+.SendPlane {
+  display: inline-block;
+}
+
+.SendMessageTitle {
+  text-shadow: 0px 4px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
+}
+
+.SendMessageTitle::first-letter {
+  font-size: 1.2em;
+  padding: 5px 10px;
+  margin-right: 5px; 
+  background: var(--lightNavy);
+  color: var(--fogyWhite);
+  border-radius: 50% 0;
+  font-weight: bold;
+  text-shadow: 0px 4px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.Portabella {
+  width: 100px;
+}
+
+.SendMessageFieldBg {
+  background: rgba(184, 115, 51, 0.8);
+}
+
+.SendMessageHomeBtn {
+  text-shadow: 0px 2px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
+  box-shadow: rgb(50 50 93 / 25%) 0px 50px 100px -20px, rgb(0 0 0 / 30%) 0px 30px 60px -30px, rgb(10 37 64 / 35%) 0px -2px 6px 0px inset;
+}
+
+.WarningText {
+  background: var(--white);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0px 2px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
 }
 
 .HeaderMain,
@@ -47,8 +162,9 @@ body {
 }
 
 .thankCat {
-  width: 70px;
-  margin-right: -20px;
+  width: 55px;
+  margin-right: -15px;
+  margin-bottom: -39px;
 }
 
 .thankChef {
@@ -78,7 +194,9 @@ body {
 .CartHeader,
 .CartFooter,
 .ThankHeader,
-.ThankFooter {
+.ThankFooter,
+.SendMessageHeader,
+.SendMessageFooter {
   background-color: rgb(133 111 90);
   background-image:
   repeating-linear-gradient(120deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
@@ -103,7 +221,8 @@ body {
 
 .CartBody,
 .checkoutBackground,
-.ThankBody {
+.ThankBody,
+.SendMessageBody {
   background: url("./Assets/crumpledPaper.jpg");
   background-position: center;
   background-repeat: repeat;
@@ -150,6 +269,11 @@ body {
 .HomeBtn {
   text-shadow: 0px 4px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
 }
+
+.totalValue {
+  display: inline-block;
+}
+
 .CheckoutBtn,
 .HomeBtn {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
@@ -181,7 +305,14 @@ body {
 }
 
 .checkoutCat {
+  margin-bottom: -43px;
+  margin-right: -20px;
   filter: drop-shadow(4px 4px 8px #c2b2b2);
+}
+
+.characterTwo {
+  width: 80px;
+  filter: drop-shadow(4px 4px 8px #c2b2b2)
 }
 
 .billingAddress,
@@ -388,6 +519,7 @@ body {
 }
 
 #cartTitle {
+  cursor: pointer;
   background: rgba(184, 115, 51, 0.9);
   border: 1px solid var(--white);
   outline-offset: -5px;
@@ -396,7 +528,12 @@ body {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 
+#cartQuantity {
+  cursor: pointer;
+}
+
 #cartTitleText {
+  cursor: pointer;
   text-align: center;
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
@@ -638,9 +775,6 @@ body {
   transition: all .2s ease-in-out;
 }
 
-
-
-
 .caption-shadow:hover .ItemImage {
   transform: translateY(-100px);
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
@@ -701,7 +835,7 @@ body {
 .price {
   width: 25%;
   float: right;
-  color: var(--navy);
+  color: var(--darkGreen);
   font-size: 3.5em;
   position: relative;
   text-shadow: 0px 2px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
@@ -722,25 +856,24 @@ body {
 .MenuFrame {
 	margin:	3em auto;
   padding: 0 50px;
-	}
-  
+}
 
 .outerBevel { /* of frame */
 	box-shadow:	4px 6px 12px 0 black;
 	border-width:	5px;
 	border-style:	solid;
 	border-color:	rgb(109, 84, 58) rgb(24, 19, 13) rgb(24, 19, 13) rgb(109, 84, 58);
-	}
+}
 
 .flatSurface { /* of frame */
 	border:	12px solid rgb(65, 40, 16);
-	}
+}
 
 .innerBevel { /* of frame */
 	border-width:	5px;
 	border-style:	solid;
 	border-color:	rgb(24, 19, 13)	rgb(109, 84, 58) rgb(109, 84, 58) rgb(24, 19, 13);
-	}
+}
 
 /* ---------- */
 .TotalInCartBox {
@@ -775,8 +908,8 @@ body {
 
 .card-text {
   font-family: 'Poppins', sans-serif;
-  font-size: clamp(12px, calc(var(--size) * 1.2), 20px);
-  font-weight: 300;
+  font-size: clamp(14px, calc(var(--size) * 1.2), 20px);
+  font-weight: 500;
   color: var(--darkGreen);
   text-shadow: 0px 2px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
 }
@@ -944,7 +1077,6 @@ body {
   }
   .caption-shadow figcaption {
     padding: 10px;
-    /* font-size: clamp(15px, calc(var(--size)*1.2), 28px); */
   }
   .MenuFrame {
     margin:	1em auto;
